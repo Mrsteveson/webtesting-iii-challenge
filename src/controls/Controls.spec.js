@@ -21,7 +21,7 @@ describe('<Controls />', () => {
 
         const closeBtn = getByText('Close Gate');
         fireEvent.click(closeBtn);
-        getByText(/Closed/);
+        getByText(/Open Gate/);
     });
     
     it('checks open gate button', () => {

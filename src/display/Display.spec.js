@@ -30,19 +30,19 @@ describe('<Display />', () => {
    it('displays closed if closed:true', () => {
         const { getByText } = render(<Display />);
         
-        if(Display.defaultProps.closed !== false) {
-            getByText('Closed')
+        if(Display.defaultProps['closed'] === false) {
+            getByText('Open')
         }
    });
 
    it('changes className from green-led to red-led if closed:true', () => {
-        const { getByText } = render(<Dashboard />);
+        const { getByText } = render(<Display />);
 
        
         
-        if(Display.defaultProps.closed !== false) {
-            const closed = getByText(/Closed/);
-            expect(closed).toHaveClass('red-led');
+        if(Display.defaultProps['closed'] === false) {
+            const open = getByText(/Open/);
+            expect(open).toHaveClass('green-led');
         }
    });
 
